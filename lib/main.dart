@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:memory_game/ui/homePage.dart';
+import 'models/todo.dart';
 
 
-void main() {
+void main() async{
+  await Hive.initFlutter();
+  Hive.registerAdapter(todoAdapter());
   runApp(const MyApp());
 }
 
